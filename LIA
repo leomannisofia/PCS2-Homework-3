@@ -1,0 +1,7 @@
+import math  
+k,N,res=5,7,0                                                                        
+p=2**k 
+for x in range(N,p+1):                                                      
+    prob=(math.factorial(p)/(math.factorial(x)*math.factorial(p-x)))*(0.25**x)*(0.75**(p-x))                                                       
+    res+=prob                                                        
+print(res)
