@@ -1,0 +1,32 @@
+from Bio import SeqIO                      
+A,C,G,T = [],[],[],[]
+cA,cC,cG,cT=0,0,0,0
+f = open(r"C:\Users\onthe\Downloads\rosalind_cons.txt")     
+for record in SeqIO.parse(f, 'fasta'):
+    if record.seq[i]=='A':
+        cA=cA+1
+    if record.seq[i]=='C':
+        cC=cC+1
+    if record.seq[i]=='G':
+        cG=cG+1
+    if record.seq[i]=='T':
+        cT=cT+1
+A.append(cA)
+C.append(cC)
+G.append(cG)
+T.append(cT)   
+cons = ''                                                  
+for A,C,G,T in zip(prf[0],prf[1],prf[2],prf[3]):
+    if A >= C and A >= G and A >= T:                           
+        cons += 'A'                                      
+    elif C >= A and C >= G and C >= T:                         
+        cons += 'C'                                      
+    elif G >= A and G >= C and G >= T:                         
+        cons += 'G'                                      
+    elif T >= A and T >= C and T >= G:                         
+        cons += 'T'
+print(cons)                                
+print('A: '+' '.join(str(x) for x in prf[0]))
+print('C: '+' '.join(str(x) for x in prf[1]))
+print('G: '+' '.join(str(x) for x in prf[2]))
+print('T: '+' '.join(str(x) for x in prf[3]))
